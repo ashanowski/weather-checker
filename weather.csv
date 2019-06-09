@@ -1,16 +1,16 @@
 ,date,day,desc,humidity,precip,temp,wind
-0,MAR 30,Today,Partly Cloudy,44%,0%,63°40°,SW 6 mph 
-1,MAR 31,Sun,Partly Cloudy,64%,10%,59°31°,NW 14 mph 
-2,APR 1,Mon,Sunny,51%,0%,51°33°,ENE 11 mph 
-3,APR 2,Tue,Mostly Sunny,45%,0%,55°40°,SE 18 mph 
-4,APR 3,Wed,Cloudy,54%,0%,62°44°,SE 16 mph 
-5,APR 4,Thu,Partly Cloudy,56%,10%,62°42°,SE 16 mph 
-6,APR 5,Fri,Mostly Sunny,58%,20%,60°42°,SE 11 mph 
-7,APR 6,Sat,Partly Cloudy,62%,10%,62°43°,ESE 10 mph 
-8,APR 7,Sun,Partly Cloudy,63%,10%,60°42°,E 10 mph 
-9,APR 8,Mon,Partly Cloudy,59%,10%,58°42°,ENE 11 mph 
-10,APR 9,Tue,Partly Cloudy,61%,10%,56°42°,NNE 11 mph 
-11,APR 10,Wed,Partly Cloudy,60%,20%,57°41°,N 10 mph 
-12,APR 11,Thu,Partly Cloudy,61%,20%,58°43°,NE 10 mph 
-13,APR 12,Fri,Partly Cloudy,63%,20%,57°43°,NNW 10 mph 
-14,APR 13,Sat,PM Showers,62%,40%,62°45°,NNW 9 mph 
+0,JUN 9,Tonight,Partly Cloudy,68%,10%,--63°,ESE 8 mph 
+1,JUN 10,Mon,Partly Cloudy,56%,20%,87°67°,SSE 14 mph 
+2,JUN 11,Tue,Mostly Sunny,51%,10%,90°66°,SSE 13 mph 
+3,JUN 12,Wed,Mostly Sunny,49%,10%,91°65°,SSE 12 mph 
+4,JUN 13,Thu,Partly Cloudy,65%,20%,80°62°,WNW 8 mph 
+5,JUN 14,Fri,Mostly Sunny,59%,10%,86°65°,SW 6 mph 
+6,JUN 15,Sat,Partly Cloudy,52%,10%,90°66°,SSE 10 mph 
+7,JUN 16,Sun,AM Showers,60%,50%,79°60°,NW 10 mph 
+8,JUN 17,Mon,Mostly Cloudy,55%,10%,80°59°,NNW 9 mph 
+9,JUN 18,Tue,Partly Cloudy,57%,20%,80°60°,N 8 mph 
+10,JUN 19,Wed,Partly Cloudy,55%,20%,80°60°,N 8 mph 
+11,JUN 20,Thu,Isolated Thunderstorms,55%,30%,81°60°,NNW 8 mph 
+12,JUN 21,Fri,Scattered Thunderstorms,57%,40%,80°60°,NNW 8 mph 
+13,JUN 22,Sat,Scattered Thunderstorms,57%,50%,80°59°,NNW 9 mph 
+14,JUN 23,Sun,AM Showers,58%,60%,80°60°,NW 8 mph 

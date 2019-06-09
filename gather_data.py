@@ -1,26 +1,31 @@
-""" Importing modules """
+""" Script scraping web data about weather
+    and saving it as a csv file.
+"""
+
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+import logging
+logging.getLogger().setLevel(logging.INFO)
 
 
 def fetch_data():
     """ Fetch weather data from url """
     url = "https://weather.com/weather/tenday/l/PLXX0029:1:PL"
 
-    print("Requesting url...")
+    logging.info("Requesting url...")
     try:
         page = requests.get(url)
     except requests.exceptions.Timeout() as exception:
-        print("Connection timed out!", exception)
+        logging.info("Connection timed out! %s", exception)
     except requests.exceptions.InvalidURL() as exception:
-        print("Invalid URL provided!", exception)
+        logging.info("Invalid URL provided! %s", exception)
     else:
 
-        print("Accessing data...")
+        logging.info("Accessing data...")
         soup = BeautifulSoup(page.content, "html.parser")
 
-        print("Creating data table...")
+        logging.info("Creating data table...")
         table = soup.find_all("table", {"class": "twc-table"})
         data_list = []
 
@@ -43,12 +48,12 @@ def fetch_data():
                     "td", {"class": "humidity"})[i].text
                 data_list.append(day_data)
 
-        print("Converting to Pandas DataFrame...")
+        logging.info("Converting to Pandas DataFrame...")
         pd_dataframe = pd.DataFrame(data_list)
 
-        print("Saving data to 'weather.csv'...")
+        logging.info("Saving data to 'weather.csv'...")
         pd_dataframe.to_csv("weather.csv")
-        print("Success!")
+        logging.info("Success!")
 
 if __name__ == '__main__':
     fetch_data()

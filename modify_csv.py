@@ -1,7 +1,8 @@
-"""" load modules """
+""" File containing functions to manipulate
+    csv data gathered with gather_data.py
+"""
 import datetime
 import re
-import click
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -38,8 +39,9 @@ def clear_dataframe(df):
     # substract actual wind speed in mph as a number from 'wind'
     df.wind = [re.findall(r'\d+', x)[0] for x in df.wind]
 
-    # function changing month to its number, 'MAR' -> 03 (str)
+
     def month_to_number(string):
+        """ function changing month to its number, 'MAR' -> 03 (str) """
         months = [
             'JAN', 'FEB', 'MAR', 'APR', 'MAY',
             'JUN', 'JUL', 'AUG', 'SEP', 'OCT',
@@ -51,11 +53,11 @@ def clear_dataframe(df):
                 if num < 10:
                     num = "0" + str(num)
                 return str(num)
-
         return None
 
-    # function converting date, ie. 'MAR 28' -> '28/03/2019' (str)
+
     def convert_date(data):
+        """ function converting date, ie. 'MAR 28' -> '28/03/2019' (str) """
         now = datetime.datetime.now()
         year = str(now.year)
         month = month_to_number(data[:3])
@@ -82,7 +84,6 @@ def clear_dataframe(df):
     for col in df.columns[3:]:
         mean = df[col].mean()
         df[col] = df[col].fillna(mean)
-
     return df
 
 
@@ -127,7 +128,6 @@ def get_data(df, prop='temp'):
                 precips, winds]
 
 
-@click.command()
 def plot_temps(df):
     """ Plot min and max temperatures during weekday"""
     plt.figure(1, figsize=(12, 6))
@@ -253,22 +253,3 @@ def plot_weather(days, day_names, temps_hi, temps_low, hums,
     plt.subplots_adjust(wspace=0.2, hspace=0.2)
 
     return fig
-
-
-def main():
-    """ Main function """
-    # read from weather.csv
-    #dataframe_csv = pd.read_csv('weather.csv')
-
-    # clear the data
-    #dataframe_clear = clear_dataframe(dataframe_csv)
-
-    # get values from clear dataframe
-    #days, day_names, temps_hi, temps_low, hums, precips, winds = get_data(dataframe_clear, 'weather')
-
-    #plot_weather(days, day_names, temps_hi, temps_low, hums, precips, winds)
-    #plt.show()
-
-if __name__ == '__main__':
-    df = clear_dataframe(pd.read_csv('weather.csv'))
-    plot_temps(df)
